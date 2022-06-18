@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 import 'pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 //entry point main() app
 void main() {
@@ -22,7 +23,11 @@ class MyApp extends StatelessWidget {
       // home: HomePage(),
       //thememode it uses the theme mode according to the system/dark/light
       themeMode: ThemeMode.system,
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.lato().fontFamily,
+        primaryTextTheme: GoogleFonts.latoTextTheme(),
+      ),
       darkTheme: ThemeData(
         brightness: Brightness.light,
         //it gives color to the primary stuffs
@@ -45,5 +50,5 @@ class MyApp extends StatelessWidget {
   //we use it using {}
   //for plastic we have not set the optional value and neither we pass it through the argument then there will be a trouble so we use @required
   //@required cpommad make it compulsory for the user to pass the actual argument for that parameter. else it will give warning
-  bringVegetable({@required bool plastic, int rupees = 100}) {}
+  bringVegetable({@required bool plastic = false, int rupees = 100}) {}
 }
